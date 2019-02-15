@@ -25,6 +25,7 @@ class ImageSort(tk.Frame):
     def setup(self):
         self.bind('<KeyPress-f>', self.btn1_clicked)
         self.bind('<KeyPress-j>', self.btn2_clicked)
+        self.bind('<Right>', self.btn3_clicked)
 
         self.lbl = tk.Label(self)
         self.lbl.grid(row = 0, column = 0)
@@ -32,10 +33,13 @@ class ImageSort(tk.Frame):
         self.btn1 = tk.Button(self, text = "f = bad", command = self.btn1_clicked)
         self.btn1.grid(row = 1, column = 0, sticky = "w")
         self.btn2 = tk.Button(self, text = "j = good", command = self.btn2_clicked)
-        self.btn2.grid(row = 1, column = 1)
+        self.btn2.grid(row = 1, column = 2)
+        self.btn3 = tk.Button(self, text = "--> = neutral", command = self.btn3_clicked)
+        self.btn3.grid(row = 1, column = 1)
 
+        self.focus_set()
 
-    def btn1_clicked(self):
+    def btn1_clicked(self, *args):
         try:
             self.dest = self.my_dir + '/output/bad'
             copy(self.f, self.dest)
@@ -43,9 +47,17 @@ class ImageSort(tk.Frame):
         except ValueError:
             pass
 
-    def btn2_clicked(self):
+    def btn2_clicked(self, *args):
         try:
             self.dest = self.my_dir + '/output/good'
+            copy(self.f, self.dest)
+            self.display_next()
+        except ValueError:
+            pass
+
+    def btn3_clicked(self, *args):
+        try:
+            self.dest = self.my_dir + '/output/neutral'
             copy(self.f, self.dest)
             self.display_next()
         except ValueError:
