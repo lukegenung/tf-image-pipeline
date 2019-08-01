@@ -1,7 +1,6 @@
 """
 Takes a folder path given in the command line.
 Remove the background from all JPEG files in the folder and sub-folders.
-Source: https://stackoverflow.com/questions/29313667/how-do-i-remove-the-background-from-this-kind-of-image
 """
 
 import os, sys, cv2
