@@ -103,9 +103,8 @@ class ImageSort(tk.Frame):
         try:
             self.f = self.file_list[self.index]
         except IndexError:
-            self.index = -1
-            self.display_next(self.file_list)
-            return
+            print("No more images to show")
+            sys.exit(0)
 
         self.img = Image.open(self.f)
         self.resize_image(self)
