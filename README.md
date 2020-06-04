@@ -1,10 +1,11 @@
-# tf-image-pipeline
+# Overview
 Data preparation process for training an image classifier on video files.
 
 This pipeline can be used to convert video files into images for ML training data.
 Enables easy labelling of training data and image cleaning.
 
-Steps:
+
+# To Use
 
 video_to_mp4.py - Convert video files to MP4
 
