@@ -1,7 +1,7 @@
 # tf-image-pipeline
 Data preparation process for training an image classifier on video files.
 
-This data pipeline can be used to convert video files into images for machine learning training data.
+This pipeline can be used to convert video files into images for ML training data.
 Enables easy labelling of training data and image cleaning.
 
 Steps:
